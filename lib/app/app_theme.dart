@@ -1,18 +1,34 @@
 import 'package:flutter/material.dart';
 
-class AtlasTheme {
-  static ThemeData get lightTheme {
-    return ThemeData(
-      colorSchemeSeed: Colors.blue,
-      useMaterial3: true,
-    );
-  }
+import '../theme/colors.dart';
+import '../theme/typography.dart';
 
-  static ThemeData get darkTheme {
-    return ThemeData(
-      brightness: Brightness.dark,
-      colorSchemeSeed: Colors.blue,
-      useMaterial3: true,
-    );
-  }
+class AtlasTheme {
+  AtlasTheme._();
+
+  static ThemeData get light => ThemeData(
+        useMaterial3: true,
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: AtlasColors.backgroundLight,
+        colorSchemeSeed: AtlasColors.primary,
+        textTheme: const TextTheme(
+          headlineLarge: AtlasTypography.headline,
+          titleLarge: AtlasTypography.title,
+          bodyLarge: AtlasTypography.body,
+          bodySmall: AtlasTypography.caption,
+        ),
+      );
+
+  static ThemeData get dark => ThemeData(
+        useMaterial3: true,
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: AtlasColors.backgroundDark,
+        colorSchemeSeed: AtlasColors.primary,
+        textTheme: const TextTheme(
+          headlineLarge: AtlasTypography.headline,
+          titleLarge: AtlasTypography.title,
+          bodyLarge: AtlasTypography.body,
+          bodySmall: AtlasTypography.caption,
+        ),
+      );
 }
